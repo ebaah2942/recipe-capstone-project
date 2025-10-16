@@ -41,3 +41,16 @@ npm install
 # 4. Start the development server
 npm run dev
 ```
+
+## Current Progress
+
+- Implemented search functionality using TheMealDB API
+- Displaying recipe list dynamically with images and categories
+- Created recipe details page with ingredients and instructions
+- Core app structure and routing complete
+
+## Next Steps
+
+- Add Favorites (local storage)
+- Add Shopping List
+- Implement Dark Mode toggle
