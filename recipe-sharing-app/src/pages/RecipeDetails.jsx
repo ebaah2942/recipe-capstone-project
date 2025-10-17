@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { useShoppingList } from "../components/ShoppingListContext";
 
 const API_BASE = "https://www.themealdb.com/api/json/v1/1";
 
@@ -8,8 +9,9 @@ export default function RecipeDetails() {
   const [meal, setMeal] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { addItem } = useShoppingList();
 
-  // parse ingredients (API uses strIngredient1..20 and strMeasure1..20)
+  // ✅ function must be defined before it’s used
   const parseIngredients = (m) => {
     if (!m) return [];
     const ingredients = [];
@@ -48,6 +50,7 @@ export default function RecipeDetails() {
   if (!meal)
     return <p className="text-center text-gray-600">Recipe not found.</p>;
 
+  // ✅ safe to call here
   const ingredients = parseIngredients(meal);
   const youtubeId = meal.strYoutube
     ? new URL(meal.strYoutube).searchParams.get("v")
@@ -70,8 +73,16 @@ export default function RecipeDetails() {
           <h3 className="font-semibold mt-2">Ingredients</h3>
           <ul className="list-disc list-inside mt-2">
             {ingredients.map((ing, idx) => (
-              <li key={idx}>
-                {ing.measure} {ing.name}
+              <li key={idx} className="flex justify-between items-center">
+                <span>
+                  {ing.measure} {ing.name}
+                </span>
+                <button
+                  onClick={() => addItem(ing)}
+                  className="ml-4 text-sm text-green-600 hover:underline"
+                >
+                  Add to 🛒
+                </button>
               </li>
             ))}
           </ul>

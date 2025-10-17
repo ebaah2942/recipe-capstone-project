@@ -1,56 +1,75 @@
-# 🍳 Recipe Sharing App
+🧑‍🍳 Recipe Finder App
 
-A modern web application where users can **share, discover, and explore recipes** from around the world. Built with **React** for a fast, responsive, and interactive experience.
+A simple and interactive Recipe Finder built with React + Tailwind CSS that fetches meals from the TheMealDB API
+.
+Users can explore recipes, save favorites, manage a shopping list, and toggle dark mode.
 
----
+🚀 Features
 
-## 🚀 Features
+✅ Search Recipes:
+Browse recipes by name and category using live API data.
 
-- 🏠 **Landing Page** – Welcomes users and showcases featured recipes.
-- 🍔 **Recipe Feed** – Browse, search, and filter recipes easily.
-- 📝 **Add Recipe** – Authenticated users can upload their own recipes with photos and ingredients.
-- ❤️ **Save & Like** – Users can save or like recipes for later.
-- 👤 **User Profile** – View uploaded recipes and saved favorites.
-- 📱 **Responsive Design** – Works seamlessly on both desktop and mobile.
+❤️ Favorites:
+Save your favorite recipes for easy access later.
 
----
+🛒 Shopping List:
+Add ingredients from a recipe to your personal shopping list.
 
-## 🛠️ Tech Stack
+🌙 Dark Mode:
+Toggle between light and dark themes for a better viewing experience.
 
-- **Frontend:** React + Vite
-- **Styling:** Tailwind CSS (optional) or CSS Modules
-- **State Management:** React Hooks / Context API
-- **Version Control:** Git & GitHub
+🧩 Components Overview
+Component Description
+Navbar.jsx Navigation bar with links, shopping list, and dark mode toggle.
+Footer.jsx Simple footer with credits and links.
+LandingPage.jsx Homepage with featured recipes and search functionality.
+Dashboard.jsx Displays recipes fetched from TheMealDB API.
+RecipeCard.jsx Displays individual recipe details with “View Details” and “Source” links.
+RecipeDetails.jsx Shows full recipe details including ingredients and instructions.
+Favorites.jsx Lists all user-favorited recipes.
+ShoppingList.jsx Displays and manages ingredients users add from recipes.
+DarkModeContext.jsx Handles dark/light mode state across the app.
+⚙️ Tech Stack
 
----
+Frontend: React (Vite)
 
-## ⚙️ Installation & Setup
+Styling: Tailwind CSS
 
-Follow these steps to run the app locally:
+Routing: React Router DOM
 
-```bash
-# 1. Clone the repository
-git clone https://github.com/<your-username>/recipe-sharing-app.git
+State Management: React Hooks & Context API
 
-# 2. Navigate to the project folder
-cd recipe-sharing-app
+API: TheMealDB
 
-# 3. Install dependencies
+🛠️ Installation
+
+Clone the repository:
+
+git clone https://github.com/ebaah2942/recipe-capstone-project.git
+cd recipe-finder
+
+Install dependencies:
+
 npm install
 
-# 4. Start the development server
+Run the development server:
+
 npm run dev
-```
 
-## Current Progress
+Open in browser:
 
-- Implemented search functionality using TheMealDB API
-- Displaying recipe list dynamically with images and categories
-- Created recipe details page with ingredients and instructions
-- Core app structure and routing complete
+http://localhost:5173
 
-## Next Steps
+🌈 Future Improvements
 
-- Add Favorites (local storage)
-- Add Shopping List
-- Implement Dark Mode toggle
+Add user authentication for persistent favorites and shopping lists
+
+Upload custom recipes
+
+Profile photo and theme preferences
+
+🧑‍💻 Author
+
+Enoch Baah
+Frontend Developer | React Enthusiast
+📧 ebaah2942@gmail.com
